@@ -5,10 +5,10 @@ This project includes three data sets for Washington, New York and Chicago citie
 Bikeshare project of Programming for "Data Science with Python Nanodegree Program" course
 
 ### Description
-This project explores data related to bike share systems for three  cities in the United States—Chicago, New York City, and Washington. 
+This project explores data related to bike share systems for three  cities in the United States—Chicago, New York City, and Washington.
 
 ### Files used
-Include the files used
+bikeshare.py, Whashington.csv, Chicago.csv, and New_york_city.csv
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
