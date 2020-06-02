@@ -6,7 +6,7 @@ import numpy as np
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
-def get_filters():
+ddef get_filters():
       print('Hello! Let\'s explore some US bikeshare data!')
       print('Would you like to see data for Chicago, New York, or Washington?')
       city=input().lower()
@@ -41,8 +41,7 @@ def get_filters():
         day='all'
       return city, month, day
       #---------------------------------
-
-      def load_data(city, month, day):
+def load_data(city, month, day):
     """
     Loads data for the specified city and filters by month and day if applicable.
 
