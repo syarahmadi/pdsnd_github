@@ -96,3 +96,32 @@ def get_filters():
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
+
+    #---------------------------------------------
+def station_stats(df):
+    """Displays statistics on the most popular stations and trip."""
+
+    print('\nCalculating The Most Popular Stations and Trip...\n')
+    start_time = time.time()
+
+    # TO DO: display most commonly used start station
+    popular_start_station = df['Start Station'].mode()[0]
+
+    print('Most commonly used start station', popular_start_station)
+
+    # TO DO: display most commonly used end station
+    popular_end_station = df['End Station'].mode()[0]
+
+    print('Most commonly used end station', popular_end_station)
+
+    # TO DO: display most frequent combination of start station and end station trip
+    df["start_end"] = df['Start Station'].astype(str) + ' to ' + df['End Station']
+
+    popular_start_and_end_station = df["start_end"].mode()
+
+    print('Most commonly used start and end station', popular_start_and_end_station)
+
+
+    print("\nThis took %s seconds." % (time.time() - start_time))
+    print('-'*40)
+#------------------------------------------------------------------
