@@ -72,3 +72,27 @@ def get_filters():
         # filter by day of week to create the new dataframe
         df = df[df['day_of_week'] == day]
     return df
+    #------------------------------------------
+    def time_stats(df):
+    """Displays statistics on the most frequent times of travel."""
+
+    print('\nCalculating The Most Frequent Times of Travel...\n')
+    start_time = time.time()
+
+    # TO DO: display the most common month
+    df['Month'] = df['Start Time'].dt.month
+    popular_month = df['Month'].mode()[0]
+    print('Most Popular Month:', popular_month)
+
+    # TO DO: display the most common day of week
+    df['Day'] = df['Start Time'].dt.weekday
+    popular_day = df['Day'].mode()[0]
+    print('Most Popular day:', popular_day)
+
+    # TO DO: display the most common start hour
+    df['hour'] = df['Start Time'].dt.hour
+    popular_hour = df['hour'].mode()[0]
+    print('Most Popular Start Hour:', popular_hour)
+
+    print("\nThis took %s seconds." % (time.time() - start_time))
+    print('-'*40)
