@@ -6,7 +6,7 @@ import numpy as np
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
-ddef get_filters():
+def get_filters():
       print('Hello! Let\'s explore some US bikeshare data!')
       print('Would you like to see data for Chicago, New York, or Washington?')
       city=input().lower()
@@ -53,7 +53,6 @@ def load_data(city, month, day):
         df - Pandas DataFrame containing city data filtered by month and day
     """
     df = pd.read_csv(CITY_DATA[city])
-    # load data file into a dataframe
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.day
@@ -61,12 +60,9 @@ def load_data(city, month, day):
         months = ['january', 'february', 'march', 'april', 'may', 'june']
         month = months.index(month) + 1
 
-        # filter by month to create the new dataframe
         df = df[df['month'] == month]
 
-    # filter by day of week if applicable
     if day != 'all':
-        # filter by day of week to create the new dataframe
         df = df[df['day_of_week'] == day]
     return df
     #------------------------------------------
@@ -76,17 +72,14 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
-    # TO DO: display the most common month
     df['Month'] = df['Start Time'].dt.month
     popular_month = df['Month'].mode()[0]
     print('Most Popular Month:', popular_month)
 
-    # TO DO: display the most common day of week
     df['Day'] = df['Start Time'].dt.weekday
     popular_day = df['Day'].mode()[0]
     print('Most Popular day:', popular_day)
 
-    # TO DO: display the most common start hour
     df['hour'] = df['Start Time'].dt.hour
     popular_hour = df['hour'].mode()[0]
     print('Most Popular Start Hour:', popular_hour)
@@ -151,7 +144,6 @@ def user_stats(df):
     except:
       print('Gender information is not available')
 
-    # TO DO: Display earliest, most recent, and most common year of birth
     try:
       print('earliest year birth year is:', df["Birth Year"].min())
       print('most recent of brith year  is', df["Birth Year"].max())
